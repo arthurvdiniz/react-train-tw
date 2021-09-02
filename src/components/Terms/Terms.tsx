@@ -8,6 +8,11 @@ function Terms(): React.ReactElement {
     return !value
   }
 
+  //WIP: Change color when checkbox is diselected again
+  var changeColor = (checked: boolean) => {
+    return checked == true ? setTextColor('green') : setTextColor('black')
+  }
+
   return (
     <div>
       <h1 id="terms-of-service-title" style={{ color: textColor }}>
