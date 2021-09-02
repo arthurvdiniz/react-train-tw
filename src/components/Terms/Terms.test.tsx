@@ -8,6 +8,14 @@ test('Should renders a message and checkbox', () => {
   expect(getByDisplayValue('Accept terms of service')).toBeInTheDocument()
 })
 
+test('should keep text color black when checkbox is not checked', () => {
+  const { container, getByText, getByDisplayValue } = render(<Terms />)
+  var checkbox = getByDisplayValue('Accept terms of service')
+
+  expect(getByText('Terms of Service').style.color).toBe('black')
+  expect(checkbox).not.toBeChecked()
+})
+
 test('should change text color when checkbox is checked', () => {
   const { container, getByText, getByDisplayValue } = render(<Terms />)
   var checkbox = getByDisplayValue('Accept terms of service')
