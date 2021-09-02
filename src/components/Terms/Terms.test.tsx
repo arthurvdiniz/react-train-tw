@@ -3,22 +3,22 @@ import { render, fireEvent } from '@testing-library/react'
 import Terms from './Terms'
 
 test('Should renders a message and checkbox', () => {
-  const { container, getByText, getByDisplayValue } = render(<Terms />)
+  const { container, getByText } = render(<Terms />)
   expect(getByText('Terms of Service')).toBeInTheDocument()
-  expect(getByDisplayValue('Accept terms of service')).toBeInTheDocument()
+  expect(getByText('Accept terms of service')).toBeInTheDocument()
 })
 
 test('should keep text color black when checkbox is not checked', () => {
-  const { container, getByText, getByDisplayValue } = render(<Terms />)
-  var checkbox = getByDisplayValue('Accept terms of service')
+  const { container, getByText } = render(<Terms />)
+  var checkbox = getByText('Accept terms of service')
 
   expect(getByText('Terms of Service').style.color).toBe('black')
   expect(checkbox).not.toBeChecked()
 })
 
 test('should change text color when checkbox is checked', () => {
-  const { container, getByText, getByDisplayValue } = render(<Terms />)
-  var checkbox = getByDisplayValue('Accept terms of service')
+  const { container, getByText, getByTestId } = render(<Terms />)
+  var checkbox = getByTestId('terms-of-service-checkbox')
 
   fireEvent.click(checkbox)
 
