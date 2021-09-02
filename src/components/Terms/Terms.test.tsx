@@ -22,5 +22,5 @@ test('should change text color when checkbox is checked', () => {
 
   fireEvent.click(checkbox)
 
-  expect(getByText('Terms of Service').style.color).toBe('red')
+  expect(getByText('Terms of Service').style.color).toBe('green')
 })
