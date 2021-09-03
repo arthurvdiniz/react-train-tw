@@ -24,3 +24,16 @@ test('should change text color when checkbox is checked', () => {
 
   expect(getByText('Terms of Service').style.color).toBe('green')
 })
+
+test('should update text color when checkbox is checked and not checked', () => {
+  const { container, getByText, getByTestId } = render(<Terms />)
+  var checkbox = getByTestId('terms-of-service-checkbox')
+
+  expect(getByText('Terms of Service').style.color).toBe('black')
+
+  fireEvent.click(checkbox)
+  expect(getByText('Terms of Service').style.color).toBe('green')
+
+  fireEvent.click(checkbox)
+  expect(getByText('Terms of Service').style.color).toBe('black')
+})

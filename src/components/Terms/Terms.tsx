@@ -8,7 +8,6 @@ function Terms(): React.ReactElement {
     return !value
   }
 
-  //WIP: Change color when checkbox is diselected again
   var changeColor = (checked: boolean) => {
     return checked == true ? setTextColor('green') : setTextColor('black')
   }
@@ -26,7 +25,7 @@ function Terms(): React.ReactElement {
           type="checkbox"
           onChange={() => {
             setChecked(toggle)
-            setTextColor('green')
+            changeColor(!checked)
           }}
         />
         Accept terms of service
