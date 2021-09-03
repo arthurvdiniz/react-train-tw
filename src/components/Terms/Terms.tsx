@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { LoremIpsum } from 'react-lorem-ipsum'
 
 function Terms(): React.ReactElement {
   const [textColor, setTextColor] = useState('black')
@@ -14,10 +15,10 @@ function Terms(): React.ReactElement {
 
   return (
     <div>
-      <h1 id="terms-of-service-title" style={{ color: textColor }}>
-        Terms of Service
-      </h1>
-
+      <h1 id="terms-of-service-title">Terms of Service</h1>
+      <div data-testid="terms-of-service-text" style={{ color: textColor }}>
+        <LoremIpsum p={2} />
+      </div>
       <label>
         <input
           data-testid="terms-of-service-checkbox"
@@ -28,7 +29,7 @@ function Terms(): React.ReactElement {
             changeColor(!checked)
           }}
         />
-        Accept terms of service
+        Accept terms
       </label>
     </div>
   )
