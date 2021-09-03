@@ -5,10 +5,6 @@ function Terms(): React.ReactElement {
   const [textColor, setTextColor] = useState('black')
   const [checked, setChecked] = useState(false)
 
-  var toggle = (value: boolean) => {
-    return !value
-  }
-
   var changeColor = (checked: boolean) => {
     return checked == true ? setTextColor('green') : setTextColor('black')
   }
@@ -25,7 +21,7 @@ function Terms(): React.ReactElement {
           checked={checked}
           type="checkbox"
           onChange={() => {
-            setChecked(toggle)
+            setChecked(!checked)
             changeColor(!checked)
           }}
         />

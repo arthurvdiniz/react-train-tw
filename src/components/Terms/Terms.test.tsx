@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import Terms from './Terms'
 
-test('Should renders a message and checkbox', () => {
+test('should renders a message and checkbox', () => {
   const { container, getByText, getByTestId } = render(<Terms />)
   expect(getByText('Terms of Service')).toBeInTheDocument()
   expect(getByText('Accept terms')).toBeInTheDocument()
