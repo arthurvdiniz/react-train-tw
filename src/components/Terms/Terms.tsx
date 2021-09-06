@@ -17,7 +17,7 @@ function Terms(): React.ReactElement {
       </div>
       <label>
         <input
-          data-testid="terms-of-service-checkbox"
+          id="terms-of-service-checkbox"
           checked={checked}
           type="checkbox"
           onChange={() => {
