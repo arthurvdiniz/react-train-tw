@@ -5,6 +5,10 @@ function Terms(): React.ReactElement {
   const [textColor, setTextColor] = useState('black')
   const [checked, setChecked] = useState(false)
 
+  const termsTextStyle = {
+    color: textColor
+  }
+
   var changeColor = (checked: boolean) => {
     return checked == true ? setTextColor('green') : setTextColor('black')
   }
@@ -12,7 +16,7 @@ function Terms(): React.ReactElement {
   return (
     <div>
       <h1 id="terms-of-service-title">Terms of Service</h1>
-      <div data-testid="terms-of-service-text" style={{ color: textColor }}>
+      <div data-testid="terms-of-service-text" style={termsTextStyle}>
         <LoremIpsum p={2} />
       </div>
       <label>
